@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium Text Animation</title>
+<style>
+  body {
+    background-color: #000; /* Black background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+  }
+
+  .animation-container {
+    position: relative;
+    text-align: center;
+    color: #4CAF50;
+    font-size: 48px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: slidein 5s ease infinite, colorchange 10s infinite, scale 5s ease infinite, rotate 5s infinite;
+    transform-origin: center;
+  }
+
+  @keyframes slidein {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  @keyframes colorchange {
+    0% { color: #4CAF50; }
+    25% { color: #FFC107; }
+    50% { color: #2196F3; }
+    75% { color: #E91E63; }
+    100% { color: #4CAF50; }
+  }
+
+  @keyframes scale {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+  }
+
+  @keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+</style>
+</head>
+<body>
+  <div class="animation-container">I AM DOCKER ! 😁😆😆😆</div>
+</body>
+</html>
