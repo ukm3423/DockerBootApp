@@ -1,5 +1,5 @@
 # Use the official OpenJDK 21 JDK image from Docker Hub
-FROM openjdk:22-jdk
+FROM openjdk:21-jdk
 
 # Copy the compiled JAR file from the target directory of your build context
 COPY target/dockerboot.jar .
