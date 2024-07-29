@@ -7,6 +7,10 @@ pipeline {
         DOCKER_IMAGE = 'umeshkumarchamp/dockerbootapp'
     }
 
+    tools {
+        jdk 'jdk-21' // Ensure this is configured in Global Tool Configuration
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -15,18 +19,18 @@ pipeline {
         }
         stage('Build') {
             steps {
-                bat 'mvn clean install'
+                bat './mvn clean install'
             }
         }
         stage('Test') {
             steps {
-                bat 'mvn test'
+                bat './mvn test'
             }
         }
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build("${DOCKER_IMAGE}:latest")
+                    def customImage = docker.build("${DOCKER_IMAGE}:latest")
                 }
             }
         }
