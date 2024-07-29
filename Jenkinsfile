@@ -7,10 +7,6 @@ pipeline {
         DOCKER_IMAGE = 'umeshkumarchamp/dockerbootapp'
     }
 
-    tools {
-        jdk 'jdk-21' // Ensure this is configured in Global Tool Configuration
-    }
-
     stages {
         stage('Checkout') {
             steps {
